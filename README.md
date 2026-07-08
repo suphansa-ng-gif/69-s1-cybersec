@@ -3,4 +3,4 @@
 ## My Information
 - Suphansa Ngamaksron
 - 0568604050XX-X
-- คาดหวังการจำลองสถานการณ์จริง (Lab) เช่น การทดสอบเจาะระบบ (Penetration Testing) อย่างถูกกฎหมาย ,การตั้งค่า Firewall และการตรวจจับผู้บุกรุก (IDS/IPS)
+- Expectations for real-world simulation labs, such as authorized penetration testing, firewall configuration, and Intrusion Detection/Prevention Systems (IDS/IPS)
