@@ -5,7 +5,7 @@ services:
     ports:
       - 54327:5432
     environment:
-      - POSTGRES_PASSWORD=p@2004
+      - POSTGRES_PASSWORD=s@2004
       - POSTGRES_USER=suphansa
       - POSTGRES_DB=suphansa
     volumes:
