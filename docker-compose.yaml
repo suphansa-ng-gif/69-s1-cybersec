@@ -10,7 +10,8 @@ services:
       - POSTGRES_DB=suphansa
     volumes:
       - ./data:/var/lib/postgresql/data
-    admin:
+      
+  admin:
       image: dpage/pgadmin4
       container_name: 69-s1-admin
       depends_on:
