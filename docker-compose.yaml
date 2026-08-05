@@ -21,3 +21,10 @@ services:
       environment:
         PGADMIN_DEFAULT_EMAIL: suphansa-ng@rmutp.ac.th
         PGADMIN_DEFAULT_PASSWORD: s@2004
+      volumes:
+        - data-pgadmin:/var/lib/pgadmin
+
+  volumes:
+    data-postgres:
+    data-pgadmin:
+    
