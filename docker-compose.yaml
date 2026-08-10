@@ -29,7 +29,7 @@ services:
       ports:
         - "9091:1337"
       environment:
-        DATABASE_CLIENT: postgress
+        DATABASE_CLIENT: postgres
         DATABASE_HOST: 69-s1-db
         DATABASE_PORT: 5432
         DATABASE_NAME: suphansa
