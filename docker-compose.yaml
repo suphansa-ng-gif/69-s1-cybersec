@@ -23,8 +23,20 @@ services:
         PGADMIN_DEFAULT_PASSWORD: s@2004
       volumes:
         - data-pgadmin:/var/lib/pgadmin
+  app:
+      image: prawee/strapi
+      container_name: 69-s1-app
+      porst:
+        - "9091:1337"
+      environment:
+        DATABASE_CLIENT: postgress
+        DATABASE_HOST: 69-s1-db
+        DATABASE_PORT: 5432
+        DATABASE_NAME: suphansa
+        DATABASE_USERNAME: suphansa
+        DATABASE_PASSWORD: s@2004
 
 volumes:
-  data-postgres:
   data-pgadmin:
+  
     
