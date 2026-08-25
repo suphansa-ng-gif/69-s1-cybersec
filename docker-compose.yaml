@@ -3,40 +3,35 @@ services:
     image: postgres:16-alpine
     container_name: 69-s1-db
     ports:
-      - 54327:5432
+      - ${POSTGRES_PORT}:5432
     environment:
-      - POSTGRES_PASSWORD=s@2004
-      - POSTGRES_USER=suphansa
-      - POSTGRES_DB=suphansa
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - ./data:/var/lib/postgresql/data
-      
   admin:
-      image: dpage/pgadmin4
-      container_name: 69-s1-admin
-      depends_on:
-        - db
-      ports:
-        - "8081:80"
-      environment:
-        PGADMIN_DEFAULT_EMAIL: suphansa-ng@rmutp.ac.th
-        PGADMIN_DEFAULT_PASSWORD: s@2004
-      volumes:
-        - data-pgadmin:/var/lib/pgadmin
+    image: dpage/pgadmin4
+    container_name: 69-s1-admin
+    depends_on:
+      - db
+    ports:
+      - ${PGADMIN_DEFAULT_PORT}:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
   app:
-      image: prawee/strapi
-      container_name: 69-s1-app
-      ports:
-        - "9091:1337"
-      environment:
-        DATABASE_CLIENT: postgres
-        DATABASE_HOST: 69-s1-db
-        DATABASE_PORT: 5432
-        DATABASE_NAME: suphansa
-        DATABASE_USERNAME: suphansa
-        DATABASE_PASSWORD: s@2004
+    image: prawee/strapi
+    container_name: 69-s1-app
+    ports:
+      - ${APP_PORT}:1337
+    environment:
+      - DATABASE_CLIENT=${DATABASE_CLIENT}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
 
 volumes:
   data-pgadmin:
-  
-    
