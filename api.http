@@ -1,0 +1,37 @@
+# API
+
+### Login
+POST http://localhost:9091/admin/login
+Content-Type: application/json
+
+{
+    "email": "suphansa-ng@rmutp.ac.th", 
+    "password": "Ss@291004", 
+    "rememberMe": false
+}
+
+### Forgot
+GET http://localhost:9091/admin/forgot-password
+Content-Type: application/json
+
+{
+    "email": "suphansa-ng@rmutp.ac.th"
+}
+
+### Profile
+GET http://localhost:9091/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzg3NzA5ODc3LCJleHAiOjE3OTAzMDE4Nzd9.-u0YZ9bkZW-O34atMT6_4D8eOLFSjBkbJigZrgqfNkg
+
+### Register / Signup
+POST http://localhost:9091/api/auth/local/register
+Content-Type: application/json
+
+{
+    "username": "299999salmon",
+    "email": "299999salmon@gmail.com",
+    "password": "Ss@291004"
+}
+
+### Users
+GET http://localhost:9091/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzg3NzA5ODc3LCJleHAiOjE3OTAzMDE4Nzd9.-u0YZ9bkZW-O34atMT6_4D8eOLFSjBkbJigZrgqfNkg
